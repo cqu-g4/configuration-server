@@ -1,0 +1,28 @@
+name: Build and Publish Branch
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-push-docker-image:
+    name: Build Docker image and push to repositories
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Login to Github Packages
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build image and push to Docker Hub and GitHub Container Registry
+        uses: docker/build-push-action@v3
+        with:
+          context: ./
+          tags: ghcr.io/cqu-g4/gateway-server:main
+          push: ${{ github.ref == 'refs/heads/main' }}
