@@ -8,7 +8,7 @@ spring:
       server:
         git:
           uri: file://app/config
-          clone-on-start: false
+          clone-on-start: true
 server:
   port: 8888
 
