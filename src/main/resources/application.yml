@@ -7,7 +7,7 @@ spring:
     config:
       server:
         git:
-          uri: file://app/config
+          uri: /app/config
           clone-on-start: true
 server:
   port: 8888
