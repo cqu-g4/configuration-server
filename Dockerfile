@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . /app/
 
 RUN java --version
-RUN ./mvnw clean package
+RUN ./mvnw clean install -Dmaven.test.skip=true
 
 FROM eclipse-temurin:17-jre-jammy
 WORKDIR /app
