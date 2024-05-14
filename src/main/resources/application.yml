@@ -1,6 +1,6 @@
 spring:
-  profiles:
-    active: native
+  # profiles:
+  #   active: native
   application:
     name: CONFIGURATION-SERVER
   cloud:
