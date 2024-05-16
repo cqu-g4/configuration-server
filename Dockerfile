@@ -21,4 +21,4 @@ ENV PROFILE_ARGS "-Dspring.profiles.active=dev"
 HEALTHCHECK CMD nc -z localhost 8888
 EXPOSE 8888
 
-CMD java $JAVA_OPTS $APP_ARGS -jar /app/configuration-server.jar
+CMD java $JAVA_OPTS $APP_ARGS $PROFILE_ARGS -jar /app/configuration-server.jar
