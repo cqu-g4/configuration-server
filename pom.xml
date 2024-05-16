@@ -51,6 +51,26 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${project.parent.version}</version>
+                <configuration>
+                    <profiles>
+                        <profile>
+                            <id>dev</id>
+                            <activation>
+                                <activeByDefault>true</activeByDefault>
+                            </activation>
+                            <properties>
+                                <activeProfile>dev</activeProfile>
+                            </properties>
+                        </profile>
+
+                        <profile>
+                            <id>local</id>
+                            <properties>
+                                <activeProfile>local</activeProfile>
+                            </properties>
+                        </profile>
+                    </profiles>
+                </configuration>
             </plugin>
         </plugins>
     </build>
