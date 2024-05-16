@@ -16,6 +16,7 @@ RUN ls -l /app
 
 ENV JAVA_OPTS "-Xms512m -Xmx512m"
 #ENV APP_ARGS "-Dspring.config.location=/app/conf/application.properties "
+ENV PROFILE_ARGS "-Dspring.profiles.active=dev"
 
 HEALTHCHECK CMD nc -z localhost 8888
 EXPOSE 8888
